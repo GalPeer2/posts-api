@@ -1,0 +1,35 @@
+{
+  "name": "zavit and galtal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node --env-file=.env.dev ./dist/src/server.js",
+    "dev": "nodemon ./src/server.ts",
+    "lint": "eslint . --ext .ts",
+    "test": "tsc && jest --runInBand --detectOpenHandles --forceExit",
+    "testpostcomment": "tsc && jest --runInBand --detectOpenHandles --forceExit src/tests/postComments.test.ts"
+  },
+  "author": "galtal",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mongoose": "^8.19.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.1",
+    "@types/jest": "^30.0.0",
+    "@types/supertest": "^6.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.48.1",
+    "@typescript-eslint/parser": "^8.48.1",
+    "eslint": "^9.39.1",
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.4",
+    "ts-jest": "^29.4.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
