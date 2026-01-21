@@ -1,0 +1,144 @@
+### ===== POSTS API =====
+
+### 1. Get All Posts
+GET http://localhost:3000/post
+
+###
+
+### 2. Get All Posts (Empty result initially)
+GET http://localhost:3000/post
+
+###
+
+### 3. Add a New Post
+POST http://localhost:3000/post
+Content-Type: application/json
+
+{
+  "title": "My First Post",
+  "content": "This is the content of my first post",
+  "senderId": "user123"
+}
+
+###
+
+### 4. Add another post with different sender
+POST http://localhost:3000/post
+Content-Type: application/json
+
+{
+  "title": "Another Post",
+  "content": "Content from another user",
+  "senderId": "user456"
+}
+
+###
+
+### 5. Add a third post with same sender as first
+POST http://localhost:3000/post
+Content-Type: application/json
+
+{
+  "title": "Second Post by User123",
+  "content": "More content from user123",
+  "senderId": "user123"
+}
+
+###
+
+### 6. Get All Posts (after adding posts)
+GET http://localhost:3000/post
+
+###
+
+### 7. Get Posts by Sender (replace senderId with actual sender ID)
+GET http://localhost:3000/post?senderId=user123
+
+###
+
+### 8. Get a Post by ID (replace post_id with actual post ID)
+GET http://localhost:3000/post/replace_with_post_id
+
+###
+
+### 9. Update a Post (replace post_id with actual post ID)
+PUT http://localhost:3000/post/replace_with_post_id
+Content-Type: application/json
+
+{
+  "title": "Updated Post Title",
+  "content": "Updated content",
+  "senderId": "user123"
+}
+
+###
+
+### 10. Delete a Post (replace post_id with actual post ID)
+DELETE http://localhost:3000/post/replace_with_post_id
+
+###
+
+### ===== COMMENTS API =====
+
+### 11. Get All Comments
+GET http://localhost:3000/post-comment
+
+###
+
+### 12. Create a Comment on a Post (replace post_id with actual post ID)
+POST http://localhost:3000/post-comment
+Content-Type: application/json
+
+{
+  "message": "Great post!",
+  "postId": "replace_with_post_id",
+  "writerId": "user789"
+}
+
+###
+
+### 13. Create another Comment
+POST http://localhost:3000/post-comment
+Content-Type: application/json
+
+{
+  "message": "I agree with this!",
+  "postId": "replace_with_post_id",
+  "writerId": "user999"
+}
+
+###
+
+### 14. Get All Comments (after adding)
+GET http://localhost:3000/post-comment
+
+###
+
+### 15. Get Comments by Post ID (replace post_id with actual post ID)
+GET http://localhost:3000/post-comment?postId=replace_with_post_id
+
+###
+
+### 16. Get a Specific Comment by ID (replace comment_id with actual comment ID)
+GET http://localhost:3000/post-comment/replace_with_comment_id
+
+###
+
+### 17. Update a Comment (replace comment_id with actual comment ID)
+PUT http://localhost:3000/post-comment/replace_with_comment_id
+Content-Type: application/json
+
+{
+  "message": "Updated comment text",
+  "postId": "replace_with_post_id",
+  "writerId": "user789"
+}
+
+###
+
+### 18. Delete a Comment (replace comment_id with actual comment ID)
+DELETE http://localhost:3000/post-comment/replace_with_comment_id
+
+###
+
+
